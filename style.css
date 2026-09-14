@@ -178,6 +178,7 @@ a {
     border: 1px solid var(--ddl-borda);
     border-radius: 7px;
     padding: 10px 12px;
+    font-weight: 500;
 }
 
 #modalOrcamento .form-control:focus,
@@ -196,4 +197,45 @@ a {
 
 #modalOrcamento #continuarEndereco:hover {
     opacity: 0.9;
+}
+
+#resumoEvento {
+    margin-top: 25px;
+    padding: 18px;
+    background-color: white;
+    border: 1px solid var(--ddl-borda);
+    border-radius: 10px;
+}
+
+#resumoEvento h6 {
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: var(--ddl-conteudo);
+}
+
+.gasto {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    color: var(--ddl-conteudo);
+}
+
+.gasto .valor {
+    font-weight: 600;
+}
+
+.subtotal {
+    display: flex;
+    justify-content: space-between;
+    color: var(--ddl-conteudo);
+    font-size: 16px;
+}
+
+#subtotal {
+    font-weight: 500;
+}
+
+#valor-subtotal {
+    color: var(--ddl-rosa);
+    font-weight: 600;
 }
