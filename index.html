@@ -92,11 +92,152 @@
                 </div>
             </div>
         </div>
+        <div class="modal fade" id="modalEvento" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Monte seu evento</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h6 class="text-center mb-4">
+                            Qual tipo de evento você deseja realizar?
+                        </h6>
+                        <div class="d-grid gap-2">
+                            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+                                data-bs-target="#modalLocal">Aniversário</button>
+
+                            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+                                data-bs-target="#modalLocal">Casamento</button>
+
+                            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+                                data-bs-target="#modalLocal">Formatura</button>
+
+                            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+                                data-bs-target="#modalLocal">Festa</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modalLocal" tabindex="-1" aria-labelledby="modalLocalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalLocalLabel">Monte seu evento</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h4 class="text-center mb-4">Escolha o espaço ideal para o seu evento</h4>
+                        <div class="row g-4">
+                            <div class="col-12 col-md-4">
+                                <a data-bs-toggle="modal" data-bs-target="#modalOrcamento">
+                                    <div class="card h-100">
+                                        <div class="card-body d-flex flex-column">
+                                            <h5 class="card-title text-center">Salão Compacto</h5>
+                                            <p class="text-center">Para eventos menores e mais simples.</p>
+                                            <p class="text-center mb-1">Valor mínimo</p>
+                                            <h3 class="text-center mb-3">R$ 1.500</h3>
+                                            <ul class="list-unstyled text-center">
+                                                <li>✓ Até 50 convidados</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-12 col-md-4">
+                                <a data-bs-toggle="modal" data-bs-target="#modalOrcamento">
+                                    <div class="card h-100 border-danger">
+                                        <div class="card-body d-flex flex-column">
+                                            <div class="text-center mb-2">
+                                                <span class="badge text-bg-danger">Mais escolhido</span>
+                                            </div>
+                                            <h5 class="card-title text-center">Salão Completo</h5>
+                                            <p class="text-center">Para quem quer um evento completo e personalizado.
+                                            </p>
+                                            <p class="text-center mb-1">Valor mínimo</p>
+                                            <h3 class="text-center mb-3">R$ 2.500</h3>
+                                            <ul class="list-unstyled text-center">
+                                                <li>✓ Até 100 convidados</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-12 col-md-4">
+                                <a data-bs-toggle="modal" data-bs-target="#modalOrcamento">
+                                    <div class="card h-100">
+                                        <div class="card-body d-flex flex-column">
+                                            <h5 class="card-title text-center">Salão Premium</h5>
+                                            <p class="text-center">Para eventos maiores e totalmente personalizados.</p>
+                                            <p class="text-center mb-1">Valor mínimo</p>
+                                            <h3 class="text-center mb-3">R$ 4.000</h3>
+                                            <ul class="list-unstyled text-center">
+                                                <li>✓ Até 200 convidados</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="modal fade" id="modalOrcamento" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Cadastrar cliente</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal">
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="formCadastro" autocomplete="off">
+
+                            <div>
+                                <label for="dataEvento" class="form-label">Data do evento</label>
+                                <input type="date" id="dataEvento" class="form-control">
+                            </div>
+
+                            <div>
+                                <label for="horario" class="form-label">Horário de início</label>
+                                <select id="horario" class="form-select">
+                                    <option value="18:00">18:00</option>
+                                    <option value="19:00">19:00</option>
+                                    <option value="20:00">20:00</option>
+                                    <option value="21:00">21:00</option>
+                                    <option value="22:00">22:00</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="horario" class="form-label">Duração</label>
+                                <select id="duracao" class="form-select">
+                                    <option value="18:00">1 hora</option>
+                                    <option value="19:00">2 horas</option>
+                                    <option value="20:00">3 horas</option>
+                                    <option value="21:00">4 horas</option>
+                                    <option value="22:00">5 horas</option>
+                                </select>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="row">
             <h1 class="title-content">O evento perfeito começa aqui</h1>
             <h1 class="main-content">Planeje cada detalhe de forma simples e personalizada</h1>
             <div class="col d-flex justify-content-center">
-                <button type="button" class="btn btn-monte-evento">Monte seu evento</button>
+                <button type="button" class="btn btn-monte-evento" data-bs-toggle="modal"
+                    data-bs-target="#modalEvento">Monte seu evento</button>
             </div>
         </div>
     </div>

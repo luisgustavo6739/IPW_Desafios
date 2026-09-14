@@ -7,29 +7,17 @@
     box-sizing: border-box;
 }
 
-body {
-    background-color: #FFF7F8;
-}
-
 :root {
     --ddl-fundo: #FFF7F8;
     --ddl-texto: #E73B52;
     --ddl-rosa: #E73B52;
-    --ddl-fundo-secundario: #FFFFFF;
-    /* EXEMPLO DE COR TROQUE DEPOIS POR FAVOR */
-    --ddl-linha: #c0c0c1;
-    --ddl-campo: #4A3639;
-    /* EXEMPLO DE COR TROQUE DEPOIS POR FAVOR */
-    --ddl-label: #000;
-    /* EXEMPLO DE COR TROQUE DEPOIS POR FAVOR */
-    --ddl-icon: #FFF;
-    /* Navbar */
-    --ddl-navbar: rgba(46, 42, 42, 0);
-    --ddl-navbar-scroll: rgba(255, 255, 255, 0.95);
-    --ddl-navbar-texto: #6d6d6d;
-    --ddl-navbar-texto-scroll: #4A3639;
+    --ddl-conteudo: #333;
+    --ddl-borda: #E2E2E2;
 }
 
+body {
+    background-color: var(--ddl-fundo);
+}
 
 .carousel-image {
     height: 700px;
@@ -63,7 +51,7 @@ body {
 
 .main-content {
     font-family: "Montserrat", sans-serif;
-    font-size: 14pt;
+    font-size: 12pt;
     font-weight: 550;
     text-align: center;
     padding: 5px;
@@ -88,4 +76,124 @@ body {
     color: var(--ddl-rosa);
     border-color: var(--ddl-rosa);
     transform: translateY(-2px);
+}
+
+a {
+    cursor: pointer;
+}
+
+#modalEvento .modal-content,
+#modalLocal .modal-content,
+#modalOrcamento .modal-content {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    font-family: "Montserrat", sans-serif;
+}
+
+#modalEvento .modal-header,
+#modalLocal .modal-header,
+#modalOrcamento .modal-header {
+    background-color: white;
+    border-bottom: 1px solid var(--ddl-borda);
+    padding: 18px 22px;
+}
+
+#modalEvento .modal-title,
+#modalLocal .modal-title,
+#modalOrcamento .modal-title {
+    color: var(--ddl-conteudo);
+    font-weight: 600;
+}
+
+#modalEvento .modal-body,
+#modalLocal .modal-body,
+#modalOrcamento .modal-body {
+    background-color: var(--ddl-fundo) !important;
+    padding: 25px;
+    color: var(--ddl-conteudo);
+}
+
+#modalEvento .modal-body h6,
+#modalLocal .modal-body h4 {
+    font-weight: 550;
+    color: var(--ddl-conteudo);
+}
+
+#modalEvento .modal-body .btn {
+    font-weight: 500;
+}
+
+#modalLocal .card {
+    background-color: white;
+    border: 1px solid var(--ddl-borda);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#modalLocal .card:hover {
+    border-color: #bbb;
+    transform: translateY(-2px);
+}
+
+#modalLocal .card-destaque {
+    border: 2px solid var(--ddl-rosa);
+}
+
+#modalLocal .card-title {
+    color: var(--ddl-conteudo);
+    font-weight: 600;
+}
+
+#modalLocal .card-body>p,
+#modalLocal .card-body>ul {
+    font-weight: 450;
+}
+
+#modalLocal .badge-destaque {
+    background-color: var(--ddl-rosa);
+    color: white;
+}
+
+#modalLocal .card h3 {
+    color: var(--ddl-conteudo);
+    font-weight: 600;
+}
+
+#modalOrcamento form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#modalOrcamento .form-label {
+    font-weight: 500;
+    color: var(--ddl-conteudo);
+}
+
+#modalOrcamento .form-control,
+#modalOrcamento .form-select {
+    background-color: white;
+    border: 1px solid var(--ddl-borda);
+    border-radius: 7px;
+    padding: 10px 12px;
+}
+
+#modalOrcamento .form-control:focus,
+#modalOrcamento .form-select:focus {
+    border-color: var(--ddl-rosa);
+    box-shadow: 0 0 0 2px rgba(231, 59, 82, 0.1);
+}
+
+#modalOrcamento #continuarEndereco {
+    background-color: var(--ddl-rosa);
+    border: none;
+    border-radius: 7px;
+    padding: 10px 25px;
+    font-weight: 500;
+}
+
+#modalOrcamento #continuarEndereco:hover {
+    opacity: 0.9;
 }
