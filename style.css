@@ -381,3 +381,52 @@ a {
 #controleConvidados .resumo-convidados small {
     color: var(--ddl-conteudo);
 }
+
+#custosBuffet {
+    margin-top: 25px;
+    padding: 18px;
+    background-color: white;
+    border: 1px solid var(--ddl-borda);
+    border-radius: 10px;
+}
+
+#custosBuffet h6 {
+    margin-bottom: 15px;
+    color: var(--ddl-conteudo);
+    font-weight: 600;
+}
+
+.buffet-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--ddl-borda);
+}
+
+.buffet-item:last-child {
+    border-bottom: none;
+}
+
+.buffet-item .form-check {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding-left: 0;
+}
+
+.buffet-item .form-check-input {
+    position: static;
+    margin: 0 8px 0 0;
+}
+
+.buffet-item .form-check-label {
+    color: var(--ddl-conteudo);
+    font-weight: 500;
+    margin: 0;
+}
+
+.buffet-item>span {
+    color: var(--ddl-rosa);
+    font-weight: 600;
+}
