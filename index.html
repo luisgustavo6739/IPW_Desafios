@@ -242,6 +242,106 @@
                 </div>
             </div>
         </div>
+
+        <div class="modal fade" id="modalConvidados" tabindex="-1" aria-labelledby="modalConvidadosLabel"
+            aria-hidden="true">
+
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalConvidadosLabel">
+                            Controle de Convidados
+                        </h5>
+
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+
+                    <div class="modal-body">
+
+                        <form id="formConvidado">
+
+                            <div class="row g-3">
+
+                                <div class="col-md-5">
+                                    <label for="nomeConvidado" class="form-label">
+                                        Nome
+                                    </label>
+
+                                    <input type="text" id="nomeConvidado" class="form-control"
+                                        placeholder="Nome do convidado">
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label for="telefoneConvidado" class="form-label">
+                                        Telefone
+                                    </label>
+
+                                    <input type="tel" id="telefoneConvidado" class="form-control"
+                                        placeholder="(89) 99999-9999">
+                                </div>
+
+                                <div class="col-md-3 d-grid align-items-end">
+                                    <button type="button" class="btn btn-danger" id="btnAdicionarConvidado">
+
+                                        Adicionar
+                                    </button>
+                                </div>
+
+                            </div>
+
+                        </form>
+
+                        <div class="table-responsive mt-4">
+
+                            <table class="table">
+
+                                <thead>
+
+                                    <tr>
+                                        <th>Nome</th>
+                                        <th>Telefone</th>
+                                        <th>Status</th>
+                                        <th>Ação</th>
+                                    </tr>
+
+                                </thead>
+
+                                <tbody id="listaConvidados">
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                        <div class="resumo-convidados">
+
+                            <h4 id="totalConvidados">0</h4>
+
+                            <small>Total de convidados</small>
+
+                        </div>
+
+                    </div>
+
+                    <div class="modal-footer">
+
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+
+                            Fechar
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
         <div class="row">
             <h1 class="title-content">O evento perfeito começa aqui</h1>
             <h1 class="main-content">Planeje cada detalhe de forma simples e personalizada</h1>
