@@ -240,146 +240,13 @@ a {
     font-weight: 600;
 }
 
-/* ===== CONTROLE DE CONVIDADOS ===== */
-
-#modalOrcamento h5.text-center {
-    color: var(--ddl-conteudo);
-    font-weight: 600;
+.btn-monte-evento {
+    transition: 0.25s;
 }
 
-#listaConvidados {
-    background-color: white;
-}
-
-#listaConvidados td {
-    padding: 12px;
-    vertical-align: middle;
-}
-
-#modalOrcamento .table {
-    background-color: white;
-    border: 1px solid var(--ddl-borda);
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-#modalOrcamento .table thead {
-    background-color: var(--ddl-rosa);
-    color: white;
-}
-
-#modalOrcamento .table-hover tbody tr:hover {
-    background-color: rgba(231, 59, 82, 0.05);
-}
-
-#modalOrcamento .badge {
-    font-size: 12px;
-    padding: 6px 10px;
-    border-radius: 20px;
-}
-
-#modalOrcamento .btn-danger {
-    background-color: var(--ddl-rosa);
-    border-color: var(--ddl-rosa);
-}
-
-#modalOrcamento .btn-danger:hover {
-    background-color: #c72f44;
-    border-color: #c72f44;
-}
-
-#modalOrcamento .btn-warning {
-    color: white;
-}
-
-#totalConvidados {
-    color: var(--ddl-rosa);
-    font-weight: 700;
-}
-
-#modalOrcamento .border.rounded {
-    background-color: white;
-    border: 1px solid var(--ddl-borda) !important;
-    transition: 0.2s;
-}
-
-#modalOrcamento .border.rounded:hover {
+.btn-monte-evento:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
-}
 
-
-
-@media (max-width:768px) {
-
-    #modalOrcamento .table {
-        font-size: 14px;
-    }
-
-    #modalOrcamento .btn-sm {
-        margin-bottom: 5px;
-    }
-
-    #totalConvidados {
-        font-size: 28px;
-    }
-}
-
-
-#controleConvidados {
-    margin-top: 25px;
-    padding: 18px;
-    background-color: white;
-    border: 1px solid var(--ddl-borda);
-    border-radius: 10px;
-}
-
-#controleConvidados h5 {
-    color: var(--ddl-conteudo);
-    font-weight: 600;
-    margin-bottom: 18px;
-}
-
-#controleConvidados .table {
-    margin-top: 15px;
-    margin-bottom: 15px;
-    border: 1px solid var(--ddl-borda);
-}
-
-#controleConvidados .table thead {
-    background-color: #f8f8f8;
-}
-
-#controleConvidados .table th {
-    color: var(--ddl-conteudo);
-    font-weight: 600;
-    border-bottom: 1px solid var(--ddl-borda);
-}
-
-#controleConvidados .table td {
-    vertical-align: middle;
-    color: var(--ddl-conteudo);
-}
-
-#controleConvidados .badge {
-    font-weight: 500;
-    padding: 6px 10px;
-}
-
-#controleConvidados .resumo-convidados {
-    border-top: 1px solid var(--ddl-borda);
-    padding-top: 15px;
-    text-align: center;
-}
-
-#controleConvidados .resumo-convidados h4 {
-    color: var(--ddl-rosa);
-    font-weight: 600;
-    margin-bottom: 4px;
-}
-
-#controleConvidados .resumo-convidados small {
-    color: var(--ddl-conteudo);
 }
 
 #custosBuffet {
@@ -429,4 +296,8 @@ a {
 .buffet-item>span {
     color: var(--ddl-rosa);
     font-weight: 600;
+}
+
+.btn-controle-convidados {
+    background-color: #fff;
 }
