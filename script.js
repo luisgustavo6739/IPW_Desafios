@@ -50,30 +50,125 @@ let dataEvento = null;
 let horarioEvento = null;
 let duracaoEvento = null;
 
-function DataEvento() {
-    dataEvento = document.querySelector('#dataEvento').value;
-    horarioEvento = document.querySelector('#horarioEvento').value;
-    duracaoEvento = ducument.querySelector('#duracaoEvento').value;
+const data = document.querySelector('#dataEvento')
+data.addEventListener('change', function () {
+    dataEvento = data.value;
 
     console.log("Data: ", dataEvento);
+});
+
+const horario = document.querySelector('#horarioEvento')
+horario.addEventListener('change', function () {
+    horarioEvento = horario.value;
+
     console.log("Horário: ", horarioEvento);
+});
+
+const duracao = document.querySelector('#duracaoEvento')
+duracao.addEventListener('change', function () {
+    duracaoEvento = Number(duracao.value);
+
     console.log("Duração: ", duracaoEvento);
-}
+
+    Subtotal();
+});
+
+//valorBuffet
+let valorBuffet = 0;
+
+const opcoesBuffet = document.querySelectorAll('#modalOrcamento input[type="checkbox"]');
+
+opcoesBuffet.forEach(function (opcao) {
+    opcao.addEventListener('change', function () {
+        const comida = document.querySelector('#buffetComida');
+        const bebida = document.querySelector('#buffetBebida');
+        const servico = document.querySelector('#buffetServico');
+
+        valorBuffet = 0;
+
+        if (comida.checked) {
+            valorBuffet += 70 * total;
+        }
+
+        if (bebida.checked) {
+            valorBuffet += 40 * total;
+        }
+
+        if (servico.checked) {
+            valorBuffet += 500;
+        }
+
+        console.log("Valor do buffet: ", valorBuffet);
+
+        Subtotal();
+    });
+});
 
 //atualizarSubtotal
 function Subtotal() {
     const itensGastos = document.querySelector('#itensGastos');
     const valorSubtotal = document.querySelector('#valor-subtotal');
 
+    const taxaHora = 50;
+    const valorDuracao = duracaoEvento * taxaHora;
+
+    const valorTotal = valorAluguel + valorDuracao + valorBuffet;
+
     itensGastos.innerHTML = `
         Local (${tipoLocal}) - ${valorAluguel.toLocaleString('pt-BR', {
         style: 'currency',
         currency: 'BRL'
     })}
-        `;
 
-    valorSubtotal.textContent = valorAluguel.toLocaleString('pt-BR', {
+    <br>
+
+    Duração (${duracaoEvento || 0} horas) - ${valorDuracao.toLocaleString('pt-BR', {
+        style: 'currency',
+        currency: 'BRL'
+    })}
+
+    <br>
+
+Buffet - ${valorBuffet.toLocaleString('pt-BR', {
+        style: 'currency',
+        currency: 'BRL'
+    })}
+    `;
+
+    valorSubtotal.textContent = valorTotal.toLocaleString('pt-BR', {
         style: 'currency',
         currency: 'BRL'
     });
 }
+
+//cadastroConvidados
+let total = 0;
+
+const formConvidado = document.querySelector('#formConvidado');
+const listaConvidados = document.querySelector('#listaConvidados');
+const totalConvidados = document.querySelector('#totalConvidados');
+
+formConvidado.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const nome = document.querySelector('#nomeConvidado').value;
+    const telefone = document.querySelector('#telefoneConvidado').value;
+    const email = document.querySelector('#emailConvidado').value;
+
+    listaConvidados.innerHTML += `
+            <td>${nome}</td>
+            <td>${telefone}</td>
+            <td>${email}</td>
+            <td>
+                <button class="btn btn-danger btn-sm" onclick="this.parentElement.parentElement.remove(); total--; totalConvidados.textContent = total;">
+                    Remover
+                </button>
+            </td>
+    `;
+
+    total++;
+
+    totalConvidados.textContent = total;
+
+    formConvidado.reset();
+});
