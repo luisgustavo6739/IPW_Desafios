@@ -367,3 +367,60 @@ footer a:hover {
 footer .border-top {
     border-color: rgba(255, 255, 255, 0.3) !important;
 }
+
+footer .border-top {
+    border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* ===== Modal Relatório ===== */
+
+#modalRelatorio .modal-content {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+#modalRelatorio .modal-header {
+    background-color: #fff;
+    border-bottom: 1px solid var(--ddl-borda);
+    padding: 18px 22px;
+}
+
+#modalRelatorio .modal-title {
+    color: var(--ddl-conteudo);
+    font-weight: 600;
+}
+
+#modalRelatorio .modal-body {
+    background-color: var(--ddl-fundo);
+    padding: 25px;
+}
+
+#modalRelatorio .card {
+    border: 1px solid var(--ddl-borda);
+    border-radius: 10px;
+}
+
+#modalRelatorio .card:hover {
+    border-color: var(--ddl-rosa);
+}
+
+#modalRelatorio .card-title,
+#modalRelatorio h2,
+#modalRelatorio h4 {
+    color: var(--ddl-rosa);
+}
+
+#modalRelatorio .table thead {
+    background-color: var(--ddl-rosa);
+    color: #fff;
+}
+
+#modalRelatorio .list-group-item {
+    border-color: var(--ddl-borda);
+}
+
+#modalRelatorio .btn-danger {
+    background-color: var(--ddl-rosa);
+    border-color: var(--ddl-rosa);
+}
