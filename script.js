@@ -38,7 +38,7 @@ locaisEvento.forEach(function (local) {
                 .replace(',', '.')
         )
 
-        console.log("Local: ", tipoEvento);
+        console.log("Local: ", tipoLocal);
         console.log("Valor do aluguel: ", valorAluguel);
 
         Subtotal();
@@ -47,8 +47,8 @@ locaisEvento.forEach(function (local) {
 
 //dataEvento
 let dataEvento = null;
-let horarioEvento = null;
-let duracaoEvento = null;
+let horarioEvento = "18:00";
+let duracaoEvento = 1;
 
 const data = document.querySelector('#dataEvento')
 data.addEventListener('change', function () {
@@ -76,31 +76,35 @@ duracao.addEventListener('change', function () {
 //valorBuffet
 let valorBuffet = 0;
 
+function calcularBuffet() {
+    const comida = document.querySelector('#buffetComida');
+    const bebida = document.querySelector('#buffetBebida');
+    const servico = document.querySelector('#buffetServico');
+
+    valorBuffet = 0;
+
+    if (comida.checked) {
+        valorBuffet += 70 * total;
+    }
+
+    if (bebida.checked) {
+        valorBuffet += 40 * total;
+    }
+
+    if (servico.checked) {
+        valorBuffet += 500;
+    }
+
+    console.log("Valor do buffet: ", valorBuffet);
+
+    Subtotal();
+}
+
 const opcoesBuffet = document.querySelectorAll('#modalOrcamento input[type="checkbox"]');
 
 opcoesBuffet.forEach(function (opcao) {
     opcao.addEventListener('change', function () {
-        const comida = document.querySelector('#buffetComida');
-        const bebida = document.querySelector('#buffetBebida');
-        const servico = document.querySelector('#buffetServico');
-
-        valorBuffet = 0;
-
-        if (comida.checked) {
-            valorBuffet += 70 * total;
-        }
-
-        if (bebida.checked) {
-            valorBuffet += 40 * total;
-        }
-
-        if (servico.checked) {
-            valorBuffet += 500;
-        }
-
-        console.log("Valor do buffet: ", valorBuffet);
-
-        Subtotal();
+        calcularBuffet();
     });
 });
 
@@ -171,4 +175,77 @@ formConvidado.addEventListener('submit', function (event) {
     totalConvidados.textContent = total;
 
     formConvidado.reset();
+
+    calcularBuffet();
+
+    gerarRelatorio();
 });
+
+const formCadastro = document.querySelector('#formCadastro');
+
+formCadastro.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    // Armazena todos os dados do evento
+    dataEvento = document.querySelector('#dataEvento').value;
+    horarioEvento = document.querySelector('#horarioEvento').value;
+    duracaoEvento = Number(document.querySelector('#duracaoEvento').value);
+
+    const comida = document.querySelector('#buffetComida');
+    const bebida = document.querySelector('#buffetBebida');
+    const servico = document.querySelector('#buffetServico');
+
+    valorBuffet = 0;
+
+    if (comida.checked) {
+        valorBuffet += 70 * total;
+    }
+
+    if (bebida.checked) {
+        valorBuffet += 40 * total;
+    }
+
+    if (servico.checked) {
+        valorBuffet += 500;
+    }
+
+    console.log("Tipo de evento:", tipoEvento);
+    console.log("Local:", tipoLocal);
+    console.log("Valor do aluguel:", valorAluguel);
+    console.log("Data:", dataEvento);
+    console.log("Horário:", horarioEvento);
+    console.log("Duração:", duracaoEvento);
+    console.log("Convidados:", total);
+    console.log("Buffet:", valorBuffet);
+
+    gerarRelatorio();
+});
+
+function gerarRelatorio() {
+    document.querySelector('#relatorioTipoEvento').textContent =
+        tipoEvento || 'Não informado';
+
+    document.querySelector('#relatorioData').textContent =
+        dataEvento || 'Não informada';
+
+    document.querySelector('#relatorioHorario').textContent =
+        horarioEvento || 'Não informado';
+
+    document.querySelector('#relatorioDuracao').textContent =
+        duracaoEvento ? duracaoEvento + ' horas' : 'Não informada';
+
+    document.querySelector('#relatorioLocal').textContent =
+        tipoLocal || 'Não informado';
+
+    document.querySelector('#relatorioConvidados').textContent =
+        total;
+
+    document.querySelector('#relatorioBuffet').textContent =
+        valorBuffet.toLocaleString('pt-BR', {
+            style: 'currency',
+            currency: 'BRL'
+        });
+
+    document.querySelector('#relatorioTotal').textContent =
+        document.querySelector('#valor-subtotal').textContent;
+}
