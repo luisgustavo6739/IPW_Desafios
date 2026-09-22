@@ -1,3 +1,4 @@
+//nav-overlay
 const navbar = document.querySelector(".nav-overlay");
 
 window.addEventListener("scroll", () => {
@@ -160,14 +161,17 @@ formConvidado.addEventListener('submit', function (event) {
     const email = document.querySelector('#emailConvidado').value;
 
     listaConvidados.innerHTML += `
+        <tr>
             <td>${nome}</td>
             <td>${telefone}</td>
             <td>${email}</td>
             <td>
-                <button class="btn btn-danger btn-sm" onclick="this.parentElement.parentElement.remove(); total--; totalConvidados.textContent = total;">
+                <button class="btn btn-danger btn-sm"
+                    onclick="this.parentElement.parentElement.remove(); total--; totalConvidados.textContent = total;">
                     Remover
                 </button>
             </td>
+        </tr>
     `;
 
     total++;
@@ -186,40 +190,16 @@ const formCadastro = document.querySelector('#formCadastro');
 formCadastro.addEventListener('submit', function (event) {
     event.preventDefault();
 
-    // Armazena todos os dados do evento
     dataEvento = document.querySelector('#dataEvento').value;
     horarioEvento = document.querySelector('#horarioEvento').value;
     duracaoEvento = Number(document.querySelector('#duracaoEvento').value);
 
-    const comida = document.querySelector('#buffetComida');
-    const bebida = document.querySelector('#buffetBebida');
-    const servico = document.querySelector('#buffetServico');
-
-    valorBuffet = 0;
-
-    if (comida.checked) {
-        valorBuffet += 70 * total;
-    }
-
-    if (bebida.checked) {
-        valorBuffet += 40 * total;
-    }
-
-    if (servico.checked) {
-        valorBuffet += 500;
-    }
-
-    console.log("Tipo de evento:", tipoEvento);
-    console.log("Local:", tipoLocal);
-    console.log("Valor do aluguel:", valorAluguel);
-    console.log("Data:", dataEvento);
-    console.log("Horário:", horarioEvento);
-    console.log("Duração:", duracaoEvento);
-    console.log("Convidados:", total);
-    console.log("Buffet:", valorBuffet);
+    calcularBuffet();
 
     gerarRelatorio();
 });
+
+//relatório
 
 function gerarRelatorio() {
     document.querySelector('#relatorioTipoEvento').textContent =
